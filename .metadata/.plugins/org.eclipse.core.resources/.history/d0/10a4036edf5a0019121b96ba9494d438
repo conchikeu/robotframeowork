@@ -1,0 +1,43 @@
+package automationTestNG;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.firefox.FirefoxProfile;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
+
+public class checklist {
+	public WebDriver driver;
+	public Logger Log = Logger.getLogger(getClass());
+  @Test
+  
+  public <FirefoxProfiles> void main() throws InterruptedException{
+	  JavascriptExecutor js = (JavascriptExecutor) driver;
+	  PropertyConfigurator.configure("Log4j.properties");
+	  driver.get("https://fptshop.com.vn");
+	  driver.findElement(By.xpath("/html/body/header/nav/div/ul/li[4]/a"));
+	  
+  }
+  @BeforeTest
+  public void beforeTest() {
+	  FirefoxOptions options = new FirefoxOptions();
+		options.setProfile(new FirefoxProfile());
+		options.addPreference("dom.webnotifications.enabled", false);
+		driver = new FirefoxDriver(options);
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		
+	  }
+  @AfterTest
+  public void afterTest() {
+	  System.out.println(" LogOut Successfully, now it is the time to Log Off buddy.");
+  }
+
+}

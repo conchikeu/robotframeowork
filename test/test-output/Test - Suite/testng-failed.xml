@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Test - Suite]">
+  <parameter name="FirstName" value="vu"/>
+  <parameter name="LastName" value="van"/>
+  <test name="Automation Tools(failed)">
+    <parameter name="FirstName" value="vu"/>
+    <parameter name="LastName" value="van"/>
+    <classes>
+      <class name="automationTestNG.CreateAccount">
+        <methods>
+          <include name="BeforeTest"/>
+          <include name="main"/>
+          <include name="AfterTest"/>
+        </methods>
+      </class> <!-- automationTestNG.CreateAccount -->
+    </classes>
+  </test> <!-- Automation Tools(failed) -->
+</suite> <!-- Failed suite [Test - Suite] -->

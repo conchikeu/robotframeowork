@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Test Brownser]">
+  <test name="Tool(failed)">
+    <classes>
+      <class name="lesson1.tutorial">
+        <methods>
+          <include name="beforeTest"/>
+          <include name="main"/>
+          <include name="afterTest"/>
+        </methods>
+      </class> <!-- lesson1.tutorial -->
+    </classes>
+  </test> <!-- Tool(failed) -->
+</suite> <!-- Failed suite [Test Brownser] -->

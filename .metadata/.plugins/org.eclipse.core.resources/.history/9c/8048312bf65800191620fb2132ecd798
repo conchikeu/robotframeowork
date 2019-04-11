@@ -1,0 +1,8 @@
+<suite name="Test - Suite">
+	<test name="Automation Tools">
+		<classes>
+			<class name="automationTestNG.NewTest"/>
+			<class name="automationTestNG.Shopee"/>
+		</classes>
+	</test>
+</suite>

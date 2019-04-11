@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.1.1 (Python 3.7.1 on win32)" generated="20190411 14:54:09.726" rpa="false">
+<suite id="s1" name="automationRobot" source="C:\Users\Administrator\eclipse-workspace\automationRobot">
+<suite id="s1-s1" name="robotTest" source="C:\Users\Administrator\eclipse-workspace\automationRobot\robotTest">
+<suite id="s1-s1-s1" name="robotTestSuit" source="C:\Users\Administrator\eclipse-workspace\automationRobot\robotTest\robotTestSuit.robot">
+<test id="s1-s1-s1-t1" name="My first">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Hello!</arg>
+</arguments>
+<msg timestamp="20190411 14:54:09.913" level="INFO">Hello!</msg>
+<status status="PASS" starttime="20190411 14:54:09.913" endtime="20190411 14:54:09.913"></status>
+</kw>
+<status status="PASS" starttime="20190411 14:54:09.912" endtime="20190411 14:54:09.913" critical="yes"></status>
+</test>
+<test id="s1-s1-s1-t2" name="FirstSeleniumTest">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>https://facebook.com ff</arg>
+</arguments>
+<msg timestamp="20190411 14:54:09.915" level="INFO">Opening browser 'firefox' to base url 'https://facebook.com ff'.</msg>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<msg timestamp="20190411 14:54:15.192" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-5.png"&gt;&lt;img src="selenium-screenshot-5.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20190411 14:54:15.150" endtime="20190411 14:54:15.192"></status>
+</kw>
+<msg timestamp="20190411 14:54:15.194" level="FAIL">InvalidArgumentException: Message: Malformed URL: https://facebook.com ff is not a valid URL.
+</msg>
+<status status="FAIL" starttime="20190411 14:54:09.914" endtime="20190411 14:54:15.194"></status>
+</kw>
+<status status="FAIL" starttime="20190411 14:54:09.914" endtime="20190411 14:54:15.195" critical="yes">InvalidArgumentException: Message: Malformed URL: https://facebook.com ff is not a valid URL.
+</status>
+</test>
+<status status="FAIL" starttime="20190411 14:54:09.787" endtime="20190411 14:54:15.195"></status>
+</suite>
+<status status="FAIL" starttime="20190411 14:54:09.785" endtime="20190411 14:54:15.197"></status>
+</suite>
+<status status="FAIL" starttime="20190411 14:54:09.758" endtime="20190411 14:54:15.199"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="1">Critical Tests</stat>
+<stat pass="1" fail="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="1" id="s1" name="automationRobot">automationRobot</stat>
+<stat pass="1" fail="1" id="s1-s1" name="robotTest">automationRobot.robotTest</stat>
+<stat pass="1" fail="1" id="s1-s1-s1" name="robotTestSuit">automationRobot.robotTest.robotTestSuit</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

@@ -1,0 +1,106 @@
+package automationTestNG;
+
+import static org.junit.Assert.assertTrue;
+
+import java.util.UUID;
+import java.util.concurrent.TimeUnit;
+
+import org.apache.commons.lang3.RandomStringUtils;
+import org.apache.log4j.Logger;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.firefox.FirefoxProfile;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+
+public class test {
+
+private static WebDriver driver;
+
+public Logger Log = Logger.getLogger(getClass());
+@Test
+
+
+public void main() throws InterruptedException {
+	FirefoxOptions options = new FirefoxOptions();
+	options.setProfile(new FirefoxProfile());
+	options.addPreference("dom.webnotifications.enabled", false);
+	driver = new FirefoxDriver(options);
+	driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	
+	String homepage = "http://live.guru99.com/";
+    
+	driver.get(homepage);
+	
+	 driver.findElement(By.xpath("//*[@id=\"header\"]/div/div[2]/div/a")).click();
+	 
+	 driver.findElement(By.xpath("//*[@id=\"header-account\"]/div/ul/li[5]/a")).click();
+	 
+	 // First Name
+	 final String randomFirst = RandomStringUtils.randomNumeric(4);
+	 WebElement firstnamme = driver.findElement(By.xpath("//*[@id=\"firstname\"]"));
+	 String randomfirstname = ("Van"+randomFirst);
+	 firstnamme.sendKeys(randomfirstname);
+	 System.out.println("First Name is: " + randomfirstname);
+	 
+	 //Middle Name
+	 final String randomMiddle = RandomStringUtils.randomAlphabetic(4);
+	 WebElement secondName = driver.findElement(By.xpath("//*[@id=\"middlename\"]"));
+	 secondName.sendKeys(randomMiddle);
+	 System.out.println("Middle Name is: " + randomMiddle);
+	 
+	 //Last Name
+	 final String randomLast = RandomStringUtils.randomNumeric(4);
+	 WebElement lastname = driver.findElement(By.xpath("//*[@id=\"lastname\"]"));
+	 String randomname = ("Vu" + randomLast);
+	 lastname.sendKeys(randomname);
+	 System.out.println("Last Name is: " + randomname + "\n");
+	 
+	 //Email
+	 final String randomemail = RandomStringUtils.randomAlphabetic(10);
+	 WebElement addresemail = driver.findElement(By.xpath("//*[@id=\"email_address\"]"));
+	 String randomeaddresemail = randomemail+"@gmail.com";
+	 addresemail.sendKeys(randomeaddresemail);
+	 //Print
+	 String fullname = "Full Name is: " + "Van" + randomFirst + " " + randomMiddle + " " +"Vu" + randomLast;
+	 System.out.println(fullname);
+	 System.out.println("Email is: "+randomemail+"@gmail.com" + "=>" + "Mark" + "\n");
+	 
+	 //Password
+	 driver.findElement(By.xpath("//*[@id=\"password\"]")).click();
+	 driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("FDWuixcnioa3*@dshaa2");
+	 //Confirm password
+	 driver.findElement(By.xpath("//*[@id=\"confirmation\"]")).click();
+	 driver.findElement(By.xpath("//*[@id=\"confirmation\"]")).sendKeys("FDWuixcnioa3*@dshaa2");
+	 //CheckBox
+	 driver.findElement(By.xpath("//*[@id=\"is_subscribed\"]")).click();
+	 //Register
+	 driver.findElement(By.xpath("//*[@id=\"form-validate\"]/div[2]/button")).click();
+	 //Check
+	 driver.findElement(By.xpath("/html/body/div/div/div[2]/div/div[1]/div/div[2]/ul/li[2]/a")).click();
+	 
+	 String checkFullname = driver.findElement(By.xpath("//*[@id=\"email\"]")).getAttribute("value");
+	 
+	 String checkfirstname = checkFullname;
+	 String firstnameAfterRegister = randomeaddresemail;
+	 Assert.assertEquals(firstnameAfterRegister, checkfirstname);
+	 System.out.println("==Check Email PASSED==" + "\n");
+	 
+	 driver.findElement(By.xpath("/html/body/div/div/div[2]/div/div[1]/div/div[2]/ul/li[1]/a")).click();
+	 
+	 String getRegisterResult = driver.getTitle();
+	 String registerSuccess = "My Account";
+	 Assert.assertEquals(getRegisterResult, registerSuccess);
+	 System.out.println("==Compeleted Register==" + "\n");
+	 
+	}
+}
+
+

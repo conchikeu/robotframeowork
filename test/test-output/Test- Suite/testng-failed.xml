@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Test- Suite]">
+  <test name="Selenium(failed)">
+    <classes>
+      <class name="automationTestNG.NewTest">
+        <methods>
+          <include name="afterMethod"/>
+          <include name="beforeMethod"/>
+          <include name="main"/>
+        </methods>
+      </class> <!-- automationTestNG.NewTest -->
+    </classes>
+  </test> <!-- Selenium(failed) -->
+</suite> <!-- Failed suite [Test- Suite] -->
