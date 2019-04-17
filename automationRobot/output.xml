@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 3.1.1 (Python 3.7.1 on win32)" generated="20190411 14:54:09.726" rpa="false">
+<robot generator="Robot 3.1.1 (Python 3.7.1 on win32)" generated="20190411 18:37:28.824" rpa="false">
 <suite id="s1" name="automationRobot" source="C:\Users\Administrator\eclipse-workspace\automationRobot">
 <suite id="s1-s1" name="robotTest" source="C:\Users\Administrator\eclipse-workspace\automationRobot\robotTest">
 <suite id="s1-s1-s1" name="robotTestSuit" source="C:\Users\Administrator\eclipse-workspace\automationRobot\robotTest\robotTestSuit.robot">
@@ -9,35 +9,153 @@
 <arguments>
 <arg>Hello!</arg>
 </arguments>
-<msg timestamp="20190411 14:54:09.913" level="INFO">Hello!</msg>
-<status status="PASS" starttime="20190411 14:54:09.913" endtime="20190411 14:54:09.913"></status>
+<msg timestamp="20190411 18:37:29.006" level="INFO">Hello!</msg>
+<status status="PASS" starttime="20190411 18:37:29.006" endtime="20190411 18:37:29.006"></status>
 </kw>
-<status status="PASS" starttime="20190411 14:54:09.912" endtime="20190411 14:54:09.913" critical="yes"></status>
+<status status="PASS" starttime="20190411 18:37:29.005" endtime="20190411 18:37:29.006" critical="yes"></status>
 </test>
-<test id="s1-s1-s1-t2" name="FirstSeleniumTest">
-<kw name="Open Browser" library="SeleniumLibrary">
-<doc>Opens a new browser instance to the given ``url``.</doc>
+<test id="s1-s1-s1-t2" name="Login Should Failed With Unregistered Mail Adress">
+<kw name="Open LinkedinPage">
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
 <arguments>
-<arg>https://facebook.com ff</arg>
+<arg>sys.modules['selenium.webdriver.chrome.options'].Options()</arg>
+<arg>sys</arg>
 </arguments>
-<msg timestamp="20190411 14:54:09.915" level="INFO">Opening browser 'firefox' to base url 'https://facebook.com ff'.</msg>
+<assign>
+<var>${options}</var>
+</assign>
+<msg timestamp="20190411 18:37:29.008" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x03EB9270&gt;</msg>
+<status status="PASS" starttime="20190411 18:37:29.008" endtime="20190411 18:37:29.009"></status>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<arguments>
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-notifications</arg>
+</arguments>
+<status status="PASS" starttime="20190411 18:37:29.009" endtime="20190411 18:37:29.009"></status>
+</kw>
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<arguments>
+<arg>Chrome</arg>
+<arg>options=${options}</arg>
+</arguments>
+<assign>
+<var>${driver}</var>
+</assign>
+<msg timestamp="20190411 18:37:29.010" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<msg timestamp="20190411 18:37:31.174" level="INFO">${driver} = 1</msg>
+<status status="PASS" starttime="20190411 18:37:29.009" endtime="20190411 18:37:31.174"></status>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the active browser instance to the provided ``url``.</doc>
+<arguments>
+<arg>${SiteUrl}</arg>
+</arguments>
+<msg timestamp="20190411 18:37:31.176" level="INFO">Opening url 'http://www.fb.com'</msg>
+<status status="PASS" starttime="20190411 18:37:31.175" endtime="20190411 18:37:33.322"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20190411 18:37:33.323" endtime="20190411 18:37:34.881"></status>
+</kw>
+<status status="PASS" starttime="20190411 18:37:29.008" endtime="20190411 18:37:34.882"></status>
+</kw>
+<kw name="Enter Email">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@id="email"]</arg>
+<arg>${Email}</arg>
+</arguments>
+<msg timestamp="20190411 18:37:34.883" level="INFO">Typing text '0935550601' into text field 'xpath=//*[@id="email"]'.</msg>
+<status status="PASS" starttime="20190411 18:37:34.883" endtime="20190411 18:37:35.015"></status>
+</kw>
+<status status="PASS" starttime="20190411 18:37:34.882" endtime="20190411 18:37:35.016"></status>
+</kw>
+<kw name="Enter Password">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@id="pass"]</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20190411 18:37:35.017" level="INFO">Typing text 'zFounders97@!z' into text field 'xpath=//*[@id="pass"]'.</msg>
+<status status="PASS" starttime="20190411 18:37:35.016" endtime="20190411 18:37:35.135"></status>
+</kw>
+<status status="PASS" starttime="20190411 18:37:35.016" endtime="20190411 18:37:35.135"></status>
+</kw>
+<kw name="Click Button Login">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@id="u_0_3"] | //*[@id="u_0_2"] | //*[@id="u_0_8"]</arg>
+</arguments>
+<msg timestamp="20190411 18:37:35.137" level="INFO">Clicking button 'xpath=//*[@id="u_0_3"] | //*[@id="u_0_2"] | //*[@id="u_0_8"]'.</msg>
+<status status="PASS" starttime="20190411 18:37:35.136" endtime="20190411 18:37:41.238"></status>
+</kw>
+<status status="PASS" starttime="20190411 18:37:35.136" endtime="20190411 18:37:41.239"></status>
+</kw>
+<kw name="Check Login">
+<kw name="Title Should Be" library="SeleniumLibrary">
+<doc>Verifies that current page title equals ``title``.</doc>
+<arguments>
+<arg>${tittle}</arg>
+</arguments>
+<msg timestamp="20190411 18:37:41.246" level="INFO">Page title is 'Facebook'.</msg>
+<status status="PASS" starttime="20190411 18:37:41.240" endtime="20190411 18:37:41.247"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Login Compelted</arg>
+</arguments>
+<msg timestamp="20190411 18:37:41.247" level="INFO">Login Compelted</msg>
+<status status="PASS" starttime="20190411 18:37:41.247" endtime="20190411 18:37:41.247"></status>
+</kw>
+<status status="PASS" starttime="20190411 18:37:41.239" endtime="20190411 18:37:41.248"></status>
+</kw>
+<kw name="Check Log out">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>id=userNavigationLabel</arg>
+</arguments>
+<msg timestamp="20190411 18:37:41.249" level="INFO">Clicking element 'id=userNavigationLabel'.</msg>
+<status status="PASS" starttime="20190411 18:37:41.248" endtime="20190411 18:37:41.378"></status>
+</kw>
+<status status="PASS" starttime="20190411 18:37:41.248" endtime="20190411 18:37:41.379"></status>
+</kw>
+<kw name="Click log out">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@id="js_5st"]/div/div/ul/li[12]/a</arg>
+</arguments>
+<msg timestamp="20190411 18:37:41.380" level="INFO">Clicking element 'xpath=//*[@id="js_5st"]/div/div/ul/li[12]/a'.</msg>
 <kw name="Capture Page Screenshot" library="SeleniumLibrary">
 <doc>Takes screenshot of the current page and embeds it into log file.</doc>
-<msg timestamp="20190411 14:54:15.192" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-5.png"&gt;&lt;img src="selenium-screenshot-5.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20190411 14:54:15.150" endtime="20190411 14:54:15.192"></status>
+<msg timestamp="20190411 18:37:42.002" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-31.png"&gt;&lt;img src="selenium-screenshot-31.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20190411 18:37:41.398" endtime="20190411 18:37:42.002"></status>
 </kw>
-<msg timestamp="20190411 14:54:15.194" level="FAIL">InvalidArgumentException: Message: Malformed URL: https://facebook.com ff is not a valid URL.
-</msg>
-<status status="FAIL" starttime="20190411 14:54:09.914" endtime="20190411 14:54:15.194"></status>
+<msg timestamp="20190411 18:37:42.005" level="FAIL">Element with locator 'xpath=//*[@id="js_5st"]/div/div/ul/li[12]/a' not found.</msg>
+<status status="FAIL" starttime="20190411 18:37:41.380" endtime="20190411 18:37:42.005"></status>
 </kw>
-<status status="FAIL" starttime="20190411 14:54:09.914" endtime="20190411 14:54:15.195" critical="yes">InvalidArgumentException: Message: Malformed URL: https://facebook.com ff is not a valid URL.
-</status>
+<status status="FAIL" starttime="20190411 18:37:41.379" endtime="20190411 18:37:42.005"></status>
+</kw>
+<tags>
+<tag>InvalidLogin-UnregisteredMailError</tag>
+</tags>
+<status status="FAIL" starttime="20190411 18:37:29.007" endtime="20190411 18:37:42.005" critical="yes">Element with locator 'xpath=//*[@id="js_5st"]/div/div/ul/li[12]/a' not found.</status>
 </test>
-<status status="FAIL" starttime="20190411 14:54:09.787" endtime="20190411 14:54:15.195"></status>
+<status status="FAIL" starttime="20190411 18:37:28.879" endtime="20190411 18:37:42.006"></status>
 </suite>
-<status status="FAIL" starttime="20190411 14:54:09.785" endtime="20190411 14:54:15.197"></status>
+<status status="FAIL" starttime="20190411 18:37:28.877" endtime="20190411 18:37:42.008"></status>
 </suite>
-<status status="FAIL" starttime="20190411 14:54:09.758" endtime="20190411 14:54:15.199"></status>
+<status status="FAIL" starttime="20190411 18:37:28.855" endtime="20190411 18:37:42.010"></status>
 </suite>
 <statistics>
 <total>
@@ -45,6 +163,7 @@
 <stat pass="1" fail="1">All Tests</stat>
 </total>
 <tag>
+<stat pass="0" fail="1">InvalidLogin-UnregisteredMailError</stat>
 </tag>
 <suite>
 <stat pass="1" fail="1" id="s1" name="automationRobot">automationRobot</stat>

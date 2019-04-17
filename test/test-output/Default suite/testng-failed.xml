@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="automationTestNG.test">
+      <class name="automationTestNG.facebooktest">
         <methods>
           <include name="main"/>
         </methods>
-      </class> <!-- automationTestNG.test -->
+      </class> <!-- automationTestNG.facebooktest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -3,7 +3,13 @@
 	<section name="org.robotframework.ide.project.editor.activePage.automationRobot">
 		<item value="ReferencedLibrariesProjectConfigurationEditorPart" key="activePage"/>
 	</section>
+	<section name="org.robotframework.ide.tableditor.activePage./automationRobot/robotTest/testRobot2.robot">
+		<item value="" key="activePage"/>
+	</section>
 	<section name="org.robotframework.ide.tableditor.activePage./automationRobot/robotTest/robotTestSuit.robot">
+		<item value="" key="activePage"/>
+	</section>
+	<section name="org.robotframework.ide.tableditor.activePage./automationRobot/robotTest/robotTest1.robot">
 		<item value="" key="activePage"/>
 	</section>
 </section>

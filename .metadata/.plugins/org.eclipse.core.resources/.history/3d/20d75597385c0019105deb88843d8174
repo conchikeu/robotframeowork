@@ -1,0 +1,45 @@
+*** Setting ***
+Library    SeleniumLibrary    
+
+
+*** Test Cases ***
+My first
+    Log    Hello!    
+    
+*** Variables ***
+${Browser}        Firefox
+${SiteUrl}        http://www.fb.com
+${Email}    0935550601
+${password}    zFounders97@!z
+${tittle}    Facebook
+${WarningMessage}    Login Failed!
+*** Test Cases ***
+Login Should Failed With Unregistered Mail Adress
+    [TAGS]  InvalidLogin-UnregisteredMailError
+    ${firefox_option} =  Evaluate    sys.modules['selenium.webdriver.firefox.options'].Options()    sys
+    Call Method    ${firefox_option}    add_argument    test-type
+    Call Method    ${firefox_option}    add_argument    --disable-extensions
+    Open LinkedinPage
+    Enter Email
+    Enter Password
+    Click Button Login
+    Check Login
+    
+    #[Teardown]    Close Browser
+
+
+*** Keywords ***
+ Open LinkedinPage
+    
+    Open Browser    ${SiteUrl}    ${Browser}
+    
+    # Maximize Browser Window
+Enter Email
+    Input Text   xpath=//*[@id="email"]     ${Email}
+Enter Password
+    Input Text    xpath=//*[@id="pass"]    ${password}
+Click Button Login
+    Click button    xpath=//*[@id="u_0_3"] | //*[@id="u_0_2"] | //*[@id="u_0_8"]//p
+Check Login
+    Title Should be    ${tittle}
+    Log    Compelted

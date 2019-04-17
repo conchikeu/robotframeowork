@@ -30,7 +30,6 @@
     <fullyQualifiedTypeName name="org.junit.runners.Parameterized.Parameters"/>
     <fullyQualifiedTypeName name="org.testng.annotations.Parameters"/>
     <fullyQualifiedTypeName name="java.awt.Dimension"/>
-    <fullyQualifiedTypeName name="org.openqa.selenium.WebElement"/>
     <fullyQualifiedTypeName name="java.awt.Desktop.Action"/>
     <fullyQualifiedTypeName name="javax.swing.Action"/>
     <fullyQualifiedTypeName name="org.openqa.selenium.firefox.FirefoxOptions"/>
@@ -40,7 +39,6 @@
     <fullyQualifiedTypeName name="org.openqa.selenium.JavascriptExecutor"/>
     <fullyQualifiedTypeName name="java.net.HttpURLConnection"/>
     <fullyQualifiedTypeName name="com.gargoylesoftware.htmlunit.javascript.host.Iterator"/>
-    <fullyQualifiedTypeName name="java.util.Iterator"/>
     <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="java.net.URL"/>
     <fullyQualifiedTypeName name="java.net.MalformedURLException"/>
@@ -51,8 +49,12 @@
     <fullyQualifiedTypeName name="junit.framework.Assert"/>
     <fullyQualifiedTypeName name="org.junit.Assert"/>
     <fullyQualifiedTypeName name="org.testng.Assert"/>
+    <fullyQualifiedTypeName name="org.openqa.selenium.WebElement"/>
+    <fullyQualifiedTypeName name="org.openqa.selenium.Keys"/>
     <fullyQualifiedTypeName name="org.openqa.selenium.interactions.Actions"/>
     <fullyQualifiedTypeName name="org.openqa.selenium.support.ui.WebDriverWait"/>
     <fullyQualifiedTypeName name="org.openqa.selenium.support.ui.ExpectedConditions"/>
     <fullyQualifiedTypeName name="org.openqa.selenium.By"/>
+    <fullyQualifiedTypeName name="java.util.Set"/>
+    <fullyQualifiedTypeName name="java.util.Iterator"/>
 </qualifiedTypeNameHistroy>

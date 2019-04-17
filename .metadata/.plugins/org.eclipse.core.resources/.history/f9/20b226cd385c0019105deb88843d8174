@@ -1,0 +1,13 @@
+*** Settings ***
+Library  SeleniumLibrary
+
+*** Test Cases ***
+Login to Facebook
+    ${options}=    Evaluate  sys.modules['selenium.webdriver.chrome.options'].Options()    sys
+    Call Method     ${options}    add_argument    --disable-notifications
+    ${driver}=    Create Webdriver    Chrome    options=${options}
+    Go To     https://facebook.com
+    maximize browser window
+    input text    id=email    abc@gmail.com
+    input text    id=pass    test123
+    click button    xpath=//input[@data-testid="royal_login_button"]
