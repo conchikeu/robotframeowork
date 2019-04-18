@@ -44,7 +44,7 @@ driver.get("http://www.fb.com");
 driver.findElement(By.xpath(".//*[@id=\"email\"]")).click();
 driver.findElement(By.xpath(".//*[@id=\"email\"]")).sendKeys("0935550601");
 driver.findElement(By.xpath(".//*[@id=\"pass\"]")).click();
-driver.findElement(By.xpath(".//*[@id=\"pass\"]")).sendKeys("zFounders97@!z");
+driver.findElement(By.xpath(".//*[@id=\"pass\"]")).sendKeys("ZXasqw12");
 driver.findElement(By.xpath(".//*[@id=\"u_0_2\" or @id=\"u_0_3\" or @id=\"u_0_8\"]")).click();
 driver.findElement(By.id("userNavigationLabel")).click();
 driver.findElement(By.xpath("/html/body/div[23]/div/div/div/div/div[1]/div/div/ul/li[16]/a/span/span")).click();
