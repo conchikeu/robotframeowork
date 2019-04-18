@@ -37,7 +37,7 @@ public class facebooktest {
 	  //Password
 	  WebElement passwordClick = driver.findElement(By.xpath(".//*[@id=\"pass\"]"));
 	  passwordClick.click();
-	  passwordClick.sendKeys("zFounders97@!z");
+	  passwordClick.sendKeys("ZXasqw12");
 	  //Login button
 	  driver.findElement(By.xpath(".//*[@id=\"u_0_2\" or @id=\"u_0_3\" or @id=\"u_0_8\"]")).click();
 	  //Check login
