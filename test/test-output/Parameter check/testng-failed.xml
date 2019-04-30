@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Parameter check]">
+  <parameter name="sUsername" value="vanvu.vv97@gmail.com"/>
+  <parameter name="sPassword" value="zHelicopter123@!z"/>
+  <test name="ToolsQA(failed)">
+    <parameter name="sUsername" value="vanvu.vv97@gmail.com"/>
+    <parameter name="sPassword" value="zHelicopter123@!z"/>
+    <classes>
+      <class name="practiceTestCases.DataProviderWithExcel_001">
+        <methods>
+          <include name="Registration_data" invocation-numbers="0"/>
+          <include name="afterMethod"/>
+          <include name="beforeMethod"/>
+        </methods>
+      </class> <!-- practiceTestCases.DataProviderWithExcel_001 -->
+    </classes>
+  </test> <!-- ToolsQA(failed) -->
+</suite> <!-- Failed suite [Parameter check] -->

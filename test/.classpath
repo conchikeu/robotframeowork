@@ -73,5 +73,8 @@
 	<classpathentry kind="lib" path="C:/Users/Administrator/Downloads/poi-4.0.1/lib/log4j-1.2.17.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Administrator/Downloads/poi-4.0.1/ooxml-lib/curvesapi-1.05.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Administrator/Downloads/poi-4.0.1/ooxml-lib/xmlbeans-3.0.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Administrator/Downloads/jar_files/slf4j-api-1.7.16.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Administrator/Downloads/jar_files/slf4j-api-1.7.19.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Administrator/Downloads/jar_files/slf4j-jcl-1.7.19.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

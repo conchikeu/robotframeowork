@@ -1,16 +1,15 @@
-<suite name="Test - Suite">
-	<test name="Automation Tools">
-	<parameter name="FirstName" value="vu"/>
+<suite name="Parameter check">
+<test name="ToolsQA">
 
-	<parameter name="LastName" value="van"/>
-	
-	<pamareter name="Email" value="dad.vu.van.gl.qa@gmail.com"/>
-	
-	<pamareter name="Password" value="ZXasqw12"/>
-	
-		<classes>
-			
-			<class name="automationTestNG.CreateAccount"/>
-		</classes>
-	</test>
+<parameter name="sUsername" value="vanvu.vv97@gmail.com"/>
+
+<parameter name="sPassword" value="zHelicopter123@!z"/>
+
+	<classes>
+
+	    <class name="practiceTestCases.DataProviderWithExcel_002" />
+
+	</classes>
+
+</test>
 </suite>

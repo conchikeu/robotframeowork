@@ -1,7 +1,0 @@
-<suite name="Test Brownser">
-	<test name="Tool">
-		<classes>
-			<class name="lesson1.tutorial"/>
-		</classes>
-	</test>
-</suite>

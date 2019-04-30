@@ -1,26 +1,21 @@
 package automationTestNG;
 
-import java.util.Iterator;
-import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
-import org.apache.commons.lang3.RandomStringUtils;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.firefox.FirefoxProfile;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class facebooktest {
 	public WebDriver driver;
 	
-  @Test
+	@Test /*(invocationCount = 10)*/
   
   public <FirefoxProfiles> void main() throws InterruptedException{
 	  FirefoxOptions options = new FirefoxOptions();
@@ -37,7 +32,7 @@ public class facebooktest {
 	  //Password
 	  WebElement passwordClick = driver.findElement(By.xpath(".//*[@id=\"pass\"]"));
 	  passwordClick.click();
-	  passwordClick.sendKeys("ZXasqw12");
+	  passwordClick.sendKeys("zFounders97@!z");
 	  //Login button
 	  driver.findElement(By.xpath(".//*[@id=\"u_0_2\" or @id=\"u_0_3\" or @id=\"u_0_8\"]")).click();
 	  //Check login
@@ -46,7 +41,15 @@ public class facebooktest {
 	  String checkTitleLogin = "Facebook";
 	  Assert.assertEquals(checkTitle, checkTitleLogin);
 	  System.out.println("Login Succes!");
-	  //Click messages
+	  //Log out
+	  
+	  WebElement dropbtnLogout = driver.findElement(By.xpath(".//*[@class='_5lxr']//*[@id='logoutMenu']"));
+	  dropbtnLogout.click();
+	  
+	  WebElement logOutbtn = driver.findElement(By.xpath(".//*[@class='_64kz ']//*[@class='_54nh']"));
+	  logOutbtn.click();
+	  
+	  
 	  
 //	  //Send messages
 //	  final String randompost = RandomStringUtils.randomNumeric(10);
@@ -66,24 +69,24 @@ public class facebooktest {
 //      WebElement myDynamicElement = (new WebDriverWait(driver, 10)).until(ExpectedConditions.presenceOfElementLocated(By.xpath(".//*[@class='_6c0o']//*[@class='_1mf7 _4r1q _4jy0 _4jy3 _4jy1 _51sy selected _42ft']")));
 //      myDynamicElement.click();
       
-      driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-      WebElement profilesicon = (new WebDriverWait(driver, 20)).until(ExpectedConditions.presenceOfElementLocated(By.xpath(".//*[@class='_4kny']//*[@class='_1k67 _cy7']")));
-      profilesicon.click();
-      //assert  
-      WebElement textcheck = (new WebDriverWait(driver, 10)).until(ExpectedConditions.presenceOfElementLocated(By.xpath(".//*[@class='_5pbx userContent _3ds9 _3576']//*[@class='_5_jv _58jw']")));
-      String checktext = textcheck.getText();
-      do {
-    	  WebElement clicktamptamptamp = (new WebDriverWait(driver, 10)).until(ExpectedConditions.presenceOfElementLocated(By.xpath(".//*[@class='_6a uiPopover _5pbi _cmw _b1e _1wbl']//*[@class='_4xev _p']")));
-    	  clicktamptamptamp.click();
-          WebElement clickdeletebutton = (new WebDriverWait(driver, 10)).until(ExpectedConditions.presenceOfElementLocated(By.xpath(".//*[@class='_54ni __MenuItem']//*[text()='Delete']")));
-          clickdeletebutton.click();
-          WebElement deletebutton = (new WebDriverWait (driver, 10)).until(ExpectedConditions.presenceOfElementLocated(By.xpath(".//*[@class='_5lnf uiOverlayFooter _5a8u']//*[@class='_42ft _4jy0 layerConfirm uiOverlayButton _4jy3 _4jy1 selected _51sy']")));
-          deletebutton.click();
-          System.out.println("Delete Done!");
-      }while(checktext != "Test post");
+//      driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+//      WebElement profilesicon = (new WebDriverWait(driver, 20)).until(ExpectedConditions.presenceOfElementLocated(By.xpath(".//*[@class='_4kny']//*[@class='_1k67 _cy7']")));
+//      profilesicon.click();
+//      //assert  
+//      WebElement textcheck = (new WebDriverWait(driver, 10)).until(ExpectedConditions.presenceOfElementLocated(By.xpath(".//*[@class='_5pbx userContent _3ds9 _3576']//*[@class='_5_jv _58jw']")));
+//      String checktext = textcheck.getText();
+//      do {
+//    	  WebElement clicktamptamptamp = (new WebDriverWait(driver, 10)).until(ExpectedConditions.presenceOfElementLocated(By.xpath(".//*[@class='_6a uiPopover _5pbi _cmw _b1e _1wbl']//*[@class='_4xev _p']")));
+//    	  clicktamptamptamp.click();
+//          WebElement clickdeletebutton = (new WebDriverWait(driver, 10)).until(ExpectedConditions.presenceOfElementLocated(By.xpath(".//*[@class='_54ni __MenuItem']//*[text()='Delete']")));
+//          clickdeletebutton.click();
+//          WebElement deletebutton = (new WebDriverWait (driver, 10)).until(ExpectedConditions.presenceOfElementLocated(By.xpath(".//*[@class='_5lnf uiOverlayFooter _5a8u']//*[@class='_42ft _4jy0 layerConfirm uiOverlayButton _4jy3 _4jy1 selected _51sy']")));
+//          deletebutton.click();
+//          System.out.println("Delete Done!");
+//      }while(checktext != "Test post");
       
       
-      //WebElement poststt = driver.findElement(By.xpath(".//*[@class='_5pbx userContent _3ds9 _3576' //*[@class='_5_jv _58jw']"));
+//      WebElement poststt = driver.findElement(By.xpath(".//*[@class='_5pbx userContent _3ds9 _3576' //*[@class='_5_jv _58jw']"));
 //      String checkSTTwall = poststt.getText();
 //      String checkSTT = testpost;
 //      Assert.assertEquals(checkSTTwall, checkSTT);
